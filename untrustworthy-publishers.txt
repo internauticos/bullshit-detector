@@ -1,0 +1,26 @@
+
+# Untrustworthy Publishers Domain Blacklist
+# This file contains domains of publishers known for spreading misinformation, satire presented as news, or unreliable content
+# Format: one domain per line, comments start with #
+
+# Satirical news sites (often mistaken for real news)
+der-postillon.com
+www.der-postillon.com
+theonion.com
+clickhole.com
+reductress.com
+
+# Known conspiracy/fake news sites
+infowars.com
+naturalnews.com
+beforeitsnews.com
+globalresearch.ca
+veteranstoday.com
+
+# Clickbait and unreliable sources
+worldnewsdailyreport.com
+newsthump.com
+waterfordwhispersnews.com
+southendnewsnetwork.net
+
+# Add more domains as needed...

@@ -1,0 +1,66 @@
+
+version: '3.8'
+
+services:
+  bullshit-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: bullshit-detector-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  # SSL-enabled production service
+  bullshit-detector-ssl:
+    build:
+      context: .
+      dockerfile: Dockerfile.ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    container_name: bullshit-detector-ssl
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - DOMAIN=${DOMAIN:-localhost}
+      - EMAIL=${EMAIL:-admin@localhost}
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    profiles:
+      - ssl
+
+  # Development service (optional)
+  bullshit-detector-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    container_name: bullshit-detector-dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
+
+volumes:
+  letsencrypt:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/docker-data/letsencrypt
+      o: bind
+  certbot-www:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/docker-data/certbot
+      o: bind
+
+# ... keep existing code

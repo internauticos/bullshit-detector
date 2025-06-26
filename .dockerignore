@@ -1,0 +1,48 @@
+
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build outputs
+dist
+build
+
+# Development files
+.git
+.gitignore
+README.md
+DEVELOPER.md
+CONTRIBUTING.md
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Docker files (avoid recursion)
+Dockerfile*
+docker-compose*.yml
+
+# SSL data directories
+docker-data/
+letsencrypt/
+certbot/

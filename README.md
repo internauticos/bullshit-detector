@@ -202,3 +202,8 @@ If you encounter any issues or have questions:
 - [ ] Mobile app versions
 - [ ] Kubernetes deployment configurations
 
+--
+Disclaimer:
+This project was developed purely for fun during my free time. If you like it or wish to extend or modify it, feel free to do so. However, I take no responsibility for how you use this code, nor do I guarantee its accuracy or functionality.
+
+Thank you!
